@@ -19,4 +19,10 @@
 [Blockchain lernen] requires 3 days
 [PDF-Erstellung recherieren] requires 1 day
 [Server planen?] requires 4 days
+
+--Implementierung--
+[Server erstellen] requires 1 day
+[Server erstellen] starts at [Server planen?]'s end
+[SQL-Zugriffe implentieren] requires 2 days
+[SQL-Zugriffe implentieren] starts at [Server erstellen]'s end
 @endgantt
