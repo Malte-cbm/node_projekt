@@ -1,0 +1,22 @@
+
+@startgantt Gantt-Diagramm
+
+--Diagramme und Basics--
+
+[Github Repository anlegen] requires 1 day
+[Use-Case-Diagramme erstellen] requires 1 day
+[GANTT-Diagramm erstellen] requires 1 day
+[Klassendiagramme erstellen] requires 1 day
+
+--Datenbanken-Setup--
+[SQLite3-Datenbank anlegen] requires 1 day 
+[SQLite3-Datenbank anlegen] starts at [Klassendiagramme erstellen]'s end
+[Kunden-, Produkt- und Zwischentabellen anlegen] requires 1 day
+[Kunden-, Produkt- und Zwischentabellen anlegen] starts at [SQLite3-Datenbank anlegen]'s end
+
+--Planung der Architektur--
+[DB-Anbindung planen] requires 1 day
+[Blockchain lernen] requires 3 days
+[PDF-Erstellung recherieren] requires 1 day
+[Server planen?] requires 4 days
+@endgantt
