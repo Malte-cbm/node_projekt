@@ -1,0 +1,25 @@
+@startuml Use case Diagramm
+
+usecase (sucht Rechnungen in Verzug) as U1
+usecase (Rechnungen sind zu stellen) as U2
+
+actor Buchhalter as GE <<Mensch>>
+
+package Database {
+    actor Software as DB <<Application>>
+    }
+actor  Administrator  as AD <<Mensch>>
+
+usecase (Will fehlerhafte Rechnung korrigieren) as U3
+AD --> U3
+U3 --> DB
+
+usecase (schickt Rechnung/Mahnung) as U4
+
+GE --> U4
+DB <-- U1
+U1 <-- GE
+DB --> U2
+U2 --> GE
+
+@enduml

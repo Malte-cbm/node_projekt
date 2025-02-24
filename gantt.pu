@@ -7,10 +7,11 @@
 [Use-Case-Diagramme erstellen] requires 1 day
 [GANTT-Diagramm erstellen] requires 1 day
 [Klassendiagramme erstellen] requires 1 day
+[Relationales Datenbankmodell] requires 1 day
 
 --Datenbanken-Setup--
 [SQLite3-Datenbank anlegen] requires 1 day 
-[SQLite3-Datenbank anlegen] starts at [Klassendiagramme erstellen]'s end
+[SQLite3-Datenbank anlegen] starts at [Relationales Datenbankmodell]'s end
 [Kunden-, Produkt- und Zwischentabellen anlegen] requires 1 day
 [Kunden-, Produkt- und Zwischentabellen anlegen] starts at [SQLite3-Datenbank anlegen]'s end
 
