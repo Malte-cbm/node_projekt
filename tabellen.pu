@@ -1,0 +1,41 @@
+@startuml Tabellenschema
+
+skinparam Linetype ortho
+object Usertabelle {
+
+    id = INT PK 
+    name = VARCHAR
+    email = VARCHAR
+    passwort = VARCHAR
+    berechtigung = BOOL
+}
+
+object Produkttabelle {
+
+    id = INT PK
+    name = VARCHAR
+    kategorie = INT FK
+    steuersatz = INT FK
+}
+
+object Kategorientabelle {
+
+    id = INT PK
+    name = VARCHAR
+}
+
+object Steuersatztabelle{
+    id = INT PK
+    satz = INT
+}
+
+Kategorientabelle::id --> Produkttabelle::kategorie
+Steuersatztabelle::id --> Produkttabelle::steuersatz
+
+object Kundentabelle{
+    id = INT PK
+    name = VARCHAR
+    email = VARCHAR
+    
+}
+@enduml
