@@ -16,6 +16,7 @@ object Produkttabelle {
     name = VARCHAR
     kategorie = INT FK
     steuersatz = INT FK
+    preis = FLOAT
 }
 
 object Kategorientabelle {
@@ -52,7 +53,6 @@ object Postentabelle {
     id = INT PK
     produkt_id = INT FK
     menge = INT
-    preis = FLOAT
     rechnungs_id = INT FK
 }
 
