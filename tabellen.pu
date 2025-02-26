@@ -38,4 +38,25 @@ object Kundentabelle{
     email = VARCHAR
     
 }
+
+object Rechnungstabelle {
+    id = INT PK
+    datum = DATE
+    kunde = INT FK
+    verschickt = BOOL
+    beglichen = BOOL
+}
+
+object Postentabelle {
+
+    id = INT PK
+    produkt_id = INT FK
+    menge = INT
+    preis = FLOAT
+    rechnungs_id = INT FK
+}
+
+Kundentabelle::id --> Rechnungstabelle::kunde
+Rechnungstabelle::id -->Postentabelle::rechnungs_id
+Produkttabelle::id --> Postentabelle::produkt_id
 @enduml
