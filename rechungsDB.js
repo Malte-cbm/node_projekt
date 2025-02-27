@@ -27,12 +27,21 @@ RechnungenDB.prototype.deleteRechnung = function( RechnungsID ) {
 		
 		this.db.serialize( () => {
 			
-			this.db.run( `DELETE FROM FilmSpielzeitSaal WHERE filmID = ? LIMIT 1`, [movieId])
-			this.db.run( `DELETE FROM FilmGenreZuordnung WHERE filmID = ?`, [movieId])
-			this.db.run( `DELETE FROM Film WHERE ID = ? LIMIT 1`, [movieId])
+			this.db.run( `DELETE FROM Rechnungstabelle WHERE id = ? LIMIT 1`, [RechnungsID])
 			
 			resolve()
 		})	
+	});
+}
+
+
+RechnungenDB.prototype.getRechnung = function( RechnungsID ) {
+	return new Promise( ( resolve ) => {
+		const query = `SELECT rtab.*, postab.* FROM Rechnungstabelle AS rtab JOIN Postentabelle AS postab ON rtab.id = postab.rechnungs_id WHERE rtab.id = ?`
+		
+		this.db.each( query, [RechnungsID], (err, rows )  => {
+			resolve( rows )		
+		})
 	});
 }
 
